@@ -1,0 +1,23 @@
+{
+  "name": "json-tree-walker",
+  "version": "1.0.0",
+  "description": "Walk the tree of a JSON object, performing actions along the way",
+  "main": "src/index.js",
+  "scripts": {
+    "example": "node ./src/example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JDudzik/json-tree-walker.git"
+  },
+  "keywords": [
+    "json",
+    "traverse"
+  ],
+  "author": "Josiah Dudzik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JDudzik/json-tree-walker/issues"
+  },
+  "homepage": "https://github.com/JDudzik/json-tree-walker#readme"
+}

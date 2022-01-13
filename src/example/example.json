@@ -1,0 +1,15 @@
+{
+  "array_of_numbers": [ 1, 2, 3, 4 ],
+  "abc": "def",
+  "my_string": "foo",
+  "my_number": 1337,
+  "nested_object": {
+    "another_string": "bar",
+    "another_array": [ 0, 9, 8, 7 ],
+    "second_nested_object": {
+      "yes": "yup",
+      "no": "nope"
+    },
+    "a_null": null
+  }
+}
