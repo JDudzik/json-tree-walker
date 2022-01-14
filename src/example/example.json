@@ -1,6 +1,5 @@
 {
   "array_of_numbers": [ 1, 2, 3, 4 ],
-  "abc": "def",
   "my_string": "foo",
   "my_number": 1337,
   "nested_object": {

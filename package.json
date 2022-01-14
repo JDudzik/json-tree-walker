@@ -1,6 +1,6 @@
 {
   "name": "json-tree-walker",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Walk the tree of a JSON object, performing actions along the way",
   "main": "src/index.js",
   "scripts": {
@@ -12,7 +12,13 @@
   },
   "keywords": [
     "json",
-    "traverse"
+    "traverse",
+    "walk",
+    "recursive",
+    "iterator",
+    "object",
+    "array",
+    "tree"
   ],
   "author": "Josiah Dudzik",
   "license": "MIT",

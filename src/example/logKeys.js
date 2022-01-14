@@ -1,6 +1,5 @@
 const walkJson = require('../walkJson');
 
-const filePath = 'src/example/example.json';
 const allStrings = [];
 const buildObjectPathString = (metaData, key) => key ? `${metaData}.${key}` : metaData;
 const logProperty = (valueType, key, value, parentType) => console.log(`${valueType}:   ${key}: ${value}  -  parent type: ${parentType}`);
@@ -29,6 +28,7 @@ const handlerMethods = {
   },
 };
 
-walkJson.file(filePath, handlerMethods, 'ROOT');
+walkJson.file('src/example/example.json', handlerMethods, 'ROOT');
+
 console.log('\n\n------ Complete ------');
 console.log('allStrings:', allStrings);
