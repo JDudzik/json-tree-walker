@@ -1,6 +1,6 @@
 {
   "name": "json-tree-walker",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "Walk the tree of a JSON object, performing actions along the way",
   "main": "src/index.js",
   "scripts": {

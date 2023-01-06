@@ -83,6 +83,7 @@ walkJson.concatPathMeta(key, metaData)
 | :--------- | :---- | :----------- |
 | `key` | `string` \| `number` \| `undefined` | **Required**. This is the current item's `key` property. |
 | `metaData` | `string` \| `undefined` | **Required**. The metaData string |
+
 This helper method is used for generating the string-path of the object. It is a helper for one of the most common uses of the metaData object.
 It will concat the current key to the metaData as a string.
 For example:
@@ -132,11 +133,11 @@ walkJson.json(exampleObj, typeMethods, '');
 console.log(nestedStrings);
 // Result:
 // [
-//   "example['my_string']: foo",
-//   "example['nested_object']['another_string']: bar",
-//   "example['nested_object']['array_of_strings'][0]: hello",
-//   "example['nested_object']['array_of_strings'][1]: world",
-//   "example['nested_object']['second_nested_object']['yes']: yup",
-//   "example['nested_object']['second_nested_object']['no']: nope"
+//   "['my_string']: foo",
+//   "['nested_object']['another_string']: bar",
+//   "['nested_object']['array_of_strings'][0]: hello",
+//   "['nested_object']['array_of_strings'][1]: world",
+//   "['nested_object']['second_nested_object']['yes']: yup",
+//   "['nested_object']['second_nested_object']['no']: nope"
 // ]
 ```
