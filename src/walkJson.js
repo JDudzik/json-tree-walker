@@ -36,16 +36,38 @@ function walkBranch(key, value, parentType, handlerMethods, metaData) {
 }
 
 module.exports = {
-  string: (jsonString, handlerMethods, initialMetaData) => {
-    const json = JSON.parse(jsonString);
-    walkBranch(undefined, json, 'N/A', handlerMethods, initialMetaData);
+  json: (json, handlerMethods, initialMetaData) => {
+    if (typeof json !== 'object') {
+      throw new Error('"json" must be an object');
+    }
+    walkBranch(undefined, json, undefined, handlerMethods, initialMetaData);
   },
-  json: (data, handlerMethods, initialMetaData) => {
-    walkBranch(undefined, data, 'N/A', handlerMethods, initialMetaData);
+  string: (jsonString, handlerMethods, initialMetaData) => {
+    if (typeof jsonString !== 'string') {
+      throw new Error('"jsonString" must be a string');
+    }
+    const json = JSON.parse(jsonString);
+    walkBranch(undefined, json, undefined, handlerMethods, initialMetaData);
   },
   file: (filePath, handlerMethods, initialMetaData) => {
+    if (typeof filePath !== 'string') {
+      throw new Error('"filePath" must be a string');
+    }
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const json = JSON.parse(fileContent);
-    walkBranch(undefined, json, 'N/A', handlerMethods, initialMetaData);
+    walkBranch(undefined, json, undefined, handlerMethods, initialMetaData);
+  },
+  concatPathMeta: (key, metaData) => {
+    if (
+      typeof metaData !== 'string' &&
+      typeof metaData !== 'undefined'
+    ) {
+      throw new Error('"metaData" must a string or undefined');
+    }
+    
+    let keyPathPart = '';
+    if (typeof key === 'string') { keyPathPart = `['${key}']`; }
+    if (typeof key === 'number') { keyPathPart = `[${key}]`; }
+    return (metaData ? (`${metaData}${keyPathPart}`) : keyPathPart);
   },
 };

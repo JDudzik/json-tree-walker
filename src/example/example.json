@@ -5,6 +5,7 @@
   "nested_object": {
     "another_string": "bar",
     "another_array": [ 0, 9, 8, 7 ],
+    "array_of_strings": [ "hello", "world" ],
     "second_nested_object": {
       "yes": "yup",
       "no": "nope"

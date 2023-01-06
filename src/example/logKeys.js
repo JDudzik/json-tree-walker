@@ -1,21 +1,21 @@
 const walkJson = require('../walkJson');
 
 const allStrings = [];
-const buildObjectPathString = (metaData, key) => key ? `${metaData}.${key}` : metaData;
 const logProperty = (valueType, key, value, parentType) => console.log(`${valueType}:   ${key}: ${value}  -  parent type: ${parentType}`);
 
 const handlerMethods = {
   object: (key, _value, parentType, metaData) => {
     logProperty('OBJECT', key, 'N/A', parentType);
-    return buildObjectPathString(metaData, key);
+    return walkJson.concatPathMeta(key, metaData);
   },
   array: (key, _value, parentType, metaData) => {
     logProperty('ARRAY ', key, 'N/A', parentType);
-    return buildObjectPathString(metaData, key);
+    return walkJson.concatPathMeta(key, metaData);
   },
   string: (key, value, parentType, metaData) => {
     logProperty('STRING', key, value, parentType);
-    allStrings.push(`${metaData}.${key}: ${value}`);
+    const finalPath = walkJson.concatPathMeta(key, metaData);
+    allStrings.push(`${finalPath}: ${value}`);
   },
   number: (key, value, parentType, metaData) => {
     logProperty('NUMBER', key, value, parentType);
@@ -28,7 +28,7 @@ const handlerMethods = {
   },
 };
 
-walkJson.file('src/example/example.json', handlerMethods, 'ROOT');
+walkJson.file('src/example/example.json', handlerMethods, '');
 
 console.log('\n\n------ Complete ------');
 console.log('allStrings:', allStrings);
