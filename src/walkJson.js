@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const selectMethod = (json) => {
   const jsonType = typeof json;
   if (Array.isArray(json)) {
@@ -47,14 +45,6 @@ module.exports = {
       throw new Error('"jsonString" must be a string');
     }
     const json = JSON.parse(jsonString);
-    walkBranch(undefined, json, undefined, handlerMethods, initialMetaData);
-  },
-  file: (filePath, handlerMethods, initialMetaData) => {
-    if (typeof filePath !== 'string') {
-      throw new Error('"filePath" must be a string');
-    }
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const json = JSON.parse(fileContent);
     walkBranch(undefined, json, undefined, handlerMethods, initialMetaData);
   },
   concatPathMeta: (key, metaData) => {

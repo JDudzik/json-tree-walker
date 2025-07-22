@@ -1,3 +1,4 @@
+const fs = require('fs');
 const walkJson = require('../walkJson');
 
 const allStrings = [];
@@ -28,7 +29,8 @@ const handlerMethods = {
   },
 };
 
-walkJson.file('src/example/example.json', handlerMethods, '');
+const fileContent = fs.readFileSync('src/example/example.json', 'utf8');
+walkJson.string(fileContent, handlerMethods, '');
 
 console.log('\n\n------ Complete ------');
 console.log('allStrings:', allStrings);
