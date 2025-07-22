@@ -1,15 +1,15 @@
 {
   "array_of_numbers": [ 1, 2, 3, 4 ],
-  "my_string": "foo",
-  "my_number": 1337,
+  "first_string": "foo",
+  "first_number": 404,
   "nested_object": {
-    "another_string": "bar",
-    "another_array": [ 0, 9, 8, 7 ],
+    "second_string": "bar",
+    "second_array": [ 0, 9, 8, 7 ],
     "array_of_strings": [ "hello", "world" ],
-    "second_nested_object": {
-      "yes": "yup",
-      "no": "nope"
+    "deep_object": {
+      "yes": "correct",
+      "no": "incorrect"
     },
-    "a_null": null
+    "null_value": null
   }
 }
